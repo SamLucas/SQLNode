@@ -1,9 +1,9 @@
-const express = require('express');
-
+const express = require("express");
 const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    return res.json({ hello: 'oi'});
-})
+// import controllers
+const UserController = require("./controllers/UserController");
+
+routes.post("/users", UserController.store);
 
 module.exports = routes;
